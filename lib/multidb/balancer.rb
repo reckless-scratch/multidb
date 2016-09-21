@@ -15,7 +15,7 @@ module Multidb
           spec_class = ActiveRecord::Base::ConnectionSpecification
         end
         @connection_pool = ActiveRecord::ConnectionAdapters::ConnectionPool.new(
-          spec_class.new(target, "#{adapter}_connection"))
+          spec_class.new(adapter, target, "#{adapter}_connection"))
       else
         @connection_pool = target
       end
